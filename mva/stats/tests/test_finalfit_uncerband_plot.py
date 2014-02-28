@@ -63,8 +63,9 @@ ROOT.gROOT.SetBatch(0)
 # ws = rfile.Get( 'workspace_hh_combination_125' )
 # Fit_WS(ws)
 
-# channel_name = 'channel_boosted_125'
-channel_name = 'channel_cuts_vbf_highdr_loose_125_mmc1_mass'
+channel_name = 'channel_boosted_125'
+
+# channel_name = 'channel_cuts_vbf_highdr_loose_125_mmc1_mass'
 
 frame_file = root_open( 'frames.root' )
 frame         = frame_file.Get( channel_name )
@@ -82,9 +83,10 @@ graph_sig = UncertGraph( hbkg_plus_sig, curve_uncert_sig )
 
 
 graph.fillstyle='solid'
-graph.SetFillColor(ROOT.kRed-7)
-graph.SetLineColor(ROOT.kRed)
-graph.SetMarkerColor(ROOT.kRed)
+graph.linewidth=4
+graph.fillcolor=ROOT.kOrange
+graph.linecolor='red'
+graph.markercolor='red'
 
 
 c = Canvas()
